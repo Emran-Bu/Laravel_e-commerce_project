@@ -11,6 +11,6 @@ class productController extends Controller
         if (session()->has('user')) {
             return "Welcome to product page";
         }
-        // return "Welcome to product page";
+        return "First Login Then Access this site";
     }
 }

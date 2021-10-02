@@ -14,7 +14,7 @@
                     <label for="lpassword">Password</label>
                     <input class="form-control" type="password" name="lpassword" id="lpassword">
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm mt-2">Submit</button>
+                <button type="submit" class="btn btn-primary btn-sm mt-2">Login</button>
             </form>
         </div>
     </div>
