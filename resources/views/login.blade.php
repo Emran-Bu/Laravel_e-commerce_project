@@ -3,7 +3,8 @@
 <div class="conainer mt-4 custom-login">
     <div class="row container-fluid">
         <div class="col-6 offset-3">
-            <form action="" method="get">
+            <form action="login" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="lemail">Email Address</label>
                     <input class="form-control" type="email" name="lemail" id="lemail">

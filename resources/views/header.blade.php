@@ -21,7 +21,7 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         <ul class="nav navbar-nav">
-            <li><a class="nav-link" href="#">Add To Cart</a></li>
+            <li><a class="nav-link" href="#">Cart(0)</a></li>
         </ul>
       </div>
     </div>
