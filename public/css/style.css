@@ -1,4 +1,17 @@
+/* login page */
 .custom-login{
     height: 500px;
     padding-top: 100px;
+}
+
+/* product page */
+.trending-item{
+    /* width: 17%; */
+    display: inline-block;
+    /* float: left; */
+}
+.trending-item img{
+    height: 100px;
+    width: 200px;
+    margin: 20px;
 }
