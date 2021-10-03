@@ -28,4 +28,5 @@ Route::post('/login', [userController::class, 'login']);
 // product controller page
 Route::get('/', [productController::class, 'index']);
 Route::get('details/{id}', [productController::class, 'detail']);
+Route::get('search', [productController::class, 'search']);
 // Route::view('product', 'product');

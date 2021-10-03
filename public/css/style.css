@@ -18,3 +18,16 @@
     padding-top: 100px;
     height: 500px;
 }
+
+/* search page */
+.custom-search{
+}
+.search-wrapper{}
+.search-wrapper a{
+    text-decoration: none;
+}
+
+.search-wrapper img{
+    height: 100px;
+    width: 200px;
+}
