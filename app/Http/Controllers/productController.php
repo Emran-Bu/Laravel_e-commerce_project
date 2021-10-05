@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 use App\Models\product;
 use App\Models\cart;
-// use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
-use Session;
+// use Session;
 
 class productController extends Controller
 {
     //
     function index ()
     {
-        if (session()->has('user')) {
+        // if (session()->has('user')) {
             // return "Welcome to product page";
             $data = product::all();
             return view('product', ['products'=>$data]);
-        }
+        // }
         // return "First Login Then Access this site";
-        return view('login');
+        // return view('login');
     }
 
     function detail($id)
