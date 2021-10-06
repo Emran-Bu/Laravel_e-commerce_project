@@ -29,7 +29,7 @@
                         <button class="btn btn-success">Buy Now</button>
                     </div>
                     <div>
-                        <a href="/remove_cartItem/{{ $value->id }}" class="btn btn-danger">Remove From Cart</a>
+                        <a href="/remove_cartItem/{{ $value->carts_id }}" class="btn btn-danger">Remove From Cart</a>
                     </div>
                 </div>
             </div>

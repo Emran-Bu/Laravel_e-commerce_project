@@ -64,7 +64,7 @@ class productController extends Controller
 
         $data = DB::table('carts')
         ->join('products', 'carts.product_id', 'products.id')
-        ->select('products.*')
+        ->select('products.*', 'carts.id as carts_id')
         ->where('carts.user_id', $user_CartItem)
         ->get();
 
@@ -73,6 +73,7 @@ class productController extends Controller
 
     function remove_cartItem ($id)
     {
-        
+        cart::destroy($id);
+        return redirect('cartlist');
     }
 }
