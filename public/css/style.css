@@ -31,3 +31,9 @@
     height: 100px;
     width: 200px;
 }
+
+/* cartlist page */
+.cartlist-col-section{
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 12px;
+}

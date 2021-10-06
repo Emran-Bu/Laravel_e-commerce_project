@@ -31,6 +31,9 @@ Route::get('/', [productController::class, 'index']);
 Route::get('details/{id}', [productController::class, 'detail']);
 Route::get('search', [productController::class, 'search']);
 Route::post('add_to_cart', [productController::class, 'add_to_cart']);
+Route::get('/cartlist', [productController::class, 'cartlist']);
+Route::get('/remove_cartItem/{id}', [productController::class, 'remove_cartItem']);
+
 
 // logout
 Route::get('/logout', function () {
