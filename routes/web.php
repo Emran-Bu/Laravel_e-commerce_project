@@ -34,6 +34,9 @@ Route::post('add_to_cart', [productController::class, 'add_to_cart']);
 Route::get('/cartlist', [productController::class, 'cartlist']);
 Route::get('/remove_cartItem/{id}', [productController::class, 'remove_cartItem']);
 
+// ordernow page
+Route::get('/ordernow', [productController::class, 'ordernow']);
+
 
 // logout
 Route::get('/logout', function () {

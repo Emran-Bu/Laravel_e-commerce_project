@@ -2,6 +2,9 @@
 @section('content')
     <div class="cartlist-wrapper my-3">
         <h3 class="text-decoration-underline text-center">Cart List</h3>
+        <h1 class="text-center my-3">
+            <a href="/ordernow" class="btn btn-primary">Order Now</a>
+        </h1>
         @foreach($products as $key => $value)
             <div class="row offset-sm-2  my-5">
                 <div class="col-sm-3 cartlist-col-section">
@@ -22,12 +25,10 @@
                     </a>
                 </div>
                 <div class="col-sm-3 cartlist-col-section">
-                    <div>
+                    <div class="mb-2">
                         <a href="details/{{ $value->id }}" class="btn btn-warning">Details</a>
                     </div>
-                    <div class="my-2">
-                        <button class="btn btn-success">Buy Now</button>
-                    </div>
+                    
                     <div>
                         <a href="/remove_cartItem/{{ $value->carts_id }}" class="btn btn-danger">Remove From Cart</a>
                     </div>
