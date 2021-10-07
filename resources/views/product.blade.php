@@ -17,8 +17,8 @@
                     <a href="details/{{ $value['id'] }}">
                         <img src="{{ $value['gallery'] }}" class="d-block w-100" alt="Pic" height="400px">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5 class="text-dark">{{ $value['name'] }}</h5>
-                            <p class="text-dark">{{ $value['description'] }}</p>
+                            <h5 class="text-warning fw-bold fs-2">{{ $value['name'] }}</h5>
+                            <p class="text-primary fw-bold fs-4">{{ $value['description'] }}</p>
                         </div>
                     </a>
                 </div>

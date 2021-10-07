@@ -23,27 +23,28 @@
                 </tr>
             </table>
 
-            <form action="" method="post">
+            <form action="/buynow" method="post">
+                @csrf
                 <div class="form-group mb-2">
-                    <textarea class="form-control" name="" id="" cols="70" rows="5" placeholder="Type your address details and your comments."></textarea>
+                    <textarea class="form-control" name="address" id="" cols="70" rows="5" placeholder="Type your address details and your comments."></textarea>
                 </div>
                 <div class="form-group">
                     <label class="mb-1 fw-bold" for="payment">Payment Method : </label>
                     <div class="form-check">
                         <label for="payment" class="form-check-label">
-                            <input class="form-check-input" type="radio" name="payment" id="">
+                            <input class="form-check-input" type="radio" value="cash" name="payment" id="">
                             <span>Online Payment</span>
                         </label>
                     </div>
                     <div class="form-check">
                         <label for="payment" class="form-check-label">
-                            <input class="form-check-input" type="radio" name="payment" id="">
+                            <input class="form-check-input" type="radio" value="cash" name="payment" id="">
                             <span>EMI Payment</span>
                         </label>
                     </div>
                     <div class="form-check">
                         <label for="payment" class="form-check-label">
-                            <input class="form-check-input" type="radio" name="payment" id="">
+                            <input class="form-check-input" type="radio" value="cash" name="payment" id="">
                             <span>Payment on Delivery</span>
                         </label>
                     </div>

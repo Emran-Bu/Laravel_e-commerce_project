@@ -1,5 +1,19 @@
+<?php
+    use App\Http\Controllers\productController;
+    $total = 0;
+    if (Session::has('user')) {
+        $total = productController::show_CartItem();
+    }
+?>
 @extends('master')
 @section('content')
+@if($total==0)
+    <div class="" style="height: 85vh; width:500px; margin: 0 auto">
+        <div class="alert alert-danger d-inline-block mt-5">
+            <h3>At least 1 product add to cart</h3>     
+        </div>
+    </div>
+@else
     <div class="cartlist-wrapper my-3">
         <h3 class="text-decoration-underline text-center">Cart List</h3>
         <h1 class="text-center my-3">
@@ -36,4 +50,5 @@
             </div>
         @endforeach
     </div>
+    @endif
 @endsection

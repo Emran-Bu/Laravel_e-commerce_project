@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\product;
 use App\Models\cart;
+use App\Models\order;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -100,5 +101,24 @@ class productController extends Controller
         } else {
             return redirect('/login');
         }
+    }
+
+    // buynow page
+    function buynow (Request $req)
+    {
+        $userId = Session::get('user')['id'];
+        $allCart = cart::where('user_id', $userId)->get();
+        foreach ($allCart as $cart) {
+            $order = new order;
+            $order->product_id=$cart['product_id'];
+            $order->user_id=$cart['user_id'];
+            $order->address=$req->address;
+            $order->status='pending';
+            $order->payment_method=$req->payment;
+            $order->payment_status='pending';
+            $order->save();
+        }
+        cart::where('user_id', $userId)->delete();
+        return redirect('/');
     }
 }
