@@ -40,6 +40,9 @@ Route::get('/ordernow', [productController::class, 'ordernow']);
 // buynow page
 Route::post('/buynow', [productController::class, 'buynow']);
 
+// myorder page
+Route::get('/myorder', [productController::class, 'myorder']);
+
 
 // logout
 Route::get('/logout', function () {

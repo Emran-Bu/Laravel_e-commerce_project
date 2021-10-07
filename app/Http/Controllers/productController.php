@@ -121,4 +121,19 @@ class productController extends Controller
         cart::where('user_id', $userId)->delete();
         return redirect('/');
     }
+
+    // myorder page
+    function myorder ()
+    {
+        if (session()->has('user')) {
+            $userId = Session::get('user')['id'];
+            $orders = DB::table('orders')
+            ->join('products', 'orders.product_id', 'products.id')
+            ->where('orders.user_id', $userId)
+            ->get();
+            return view('/myorder', ['orders'=>$orders]);
+        } else {
+            return redirect('/login');
+        }
+    }
 }
