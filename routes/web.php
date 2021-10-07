@@ -63,4 +63,3 @@ Route::get('/logout', function () {
     Session::forget('user');
     return redirect('/login');
 });
-// Route::view('product', 'product');
