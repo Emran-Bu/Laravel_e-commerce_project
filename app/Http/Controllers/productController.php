@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\product;
 use App\Models\cart;
 use App\Models\order;
+use App\Models\single_order;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -135,5 +136,62 @@ class productController extends Controller
         } else {
             return redirect('/login');
         }
+    }
+
+
+    // add single order page
+
+    // single_order page
+    function single_order (Request $req)
+    {
+        if (session()->has('user')) {
+        // return $req->input();
+        $single_orders = new single_order;
+        $single_orders->user_id=$req->session()->get('user')['id'];
+        $single_orders->product_id=$req->product_id;
+        // return $single_orders;
+        $single_orders->save();
+
+        
+        $userId = Session::get('user')['id'];
+        $total = DB::table('single_orders')
+        ->join('products', 'single_orders.product_id', 'products.id')
+        ->where('single_orders.user_id', $userId)
+        ->sum('products.price');
+        return view('/single_order', ['total'=>$total]);
+        } else {
+            return redirect('/login');
+        }
+    }
+
+    // single_order_cancel page
+    function single_order_cancel ()
+    {
+        if (session()->has('user')) {
+            $userId = Session::get('user')['id'];
+            single_order::where('user_id', $userId)->delete();
+            return redirect('/');
+        } else {
+            return redirect('/login');
+        }
+    }
+
+    // single_buynow page
+    function single_buynow (Request $req)
+    {
+        $userId = Session::get('user')['id'];
+        $single_order = single_order::where('user_id', $userId)->get();
+        foreach ($single_order as $data) {
+            $order = new order;
+            $order->product_id=$data['product_id'];
+            $data->user_id=$data['user_id'];
+            $order->address=$req->address;
+            $order->status='pending';
+            $order->payment_method=$req->payment;
+            $order->payment_status='pending';
+            $order->save();
+        }
+        single_order::where('user_id', $userId)->delete();
+        return redirect('/');
     }
 }

@@ -20,7 +20,12 @@
                     <input type="hidden" name="product_id" value="{{ $products['id'] }}">
                     <button class="btn btn-warning">Add to Cart</button>
                 </form>
-                <button class="btn btn-success mt-4">Buy Now</button>
+                <form class="mt-4" action="/single_order" method="post">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $products['id'] }}">
+                    <button class="btn btn-success">Buy Now</button>
+                </form>
+                {{-- <a href="/single_order" class="btn btn-success mt-4">Buy Now</a> --}}
             </div>
         </div>
     </div>

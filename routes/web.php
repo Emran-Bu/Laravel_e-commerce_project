@@ -40,6 +40,15 @@ Route::get('/ordernow', [productController::class, 'ordernow']);
 // buynow page
 Route::post('/buynow', [productController::class, 'buynow']);
 
+// single_buynow page
+Route::post('/single_buynow', [productController::class, 'single_buynow']);
+
+// single_order page
+Route::post('/single_order', [productController::class, 'single_order']);
+
+// single_order_cancel page
+Route::get('/single_order_cancel', [productController::class, 'single_order_cancel']);
+
 // myorder page
 Route::get('/myorder', [productController::class, 'myorder']);
 
