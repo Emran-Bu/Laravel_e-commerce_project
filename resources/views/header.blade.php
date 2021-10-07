@@ -22,7 +22,7 @@
         </ul>
         <form action="/search" class="d-flex">
           <input class="form-control me-2" name="search" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn btn-outline-success btn-sm" type="submit">Search</button>
         </form>
         <ul class="nav navbar-nav">
             <li class="nav-item"><a class="nav-link" href="/cartlist">Cart Item({{ $total }})</a></li>
@@ -35,6 +35,7 @@
             </li>
             @else
             <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="/registration">Registration</a></li>
             @endif
         </ul>
       </div>

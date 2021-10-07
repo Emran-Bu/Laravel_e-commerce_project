@@ -43,6 +43,11 @@ Route::post('/buynow', [productController::class, 'buynow']);
 // myorder page
 Route::get('/myorder', [productController::class, 'myorder']);
 
+// registration page
+Route::post('/registration', [userController::class, 'registration']);
+
+Route::view('registration', 'registration');
+
 
 // logout
 Route::get('/logout', function () {
