@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 <div class="container mt-4 mb-2">
-    <h2 class="text-center mb-5">Order Summary</h2>
+    <h2 class="text-center mb-5">Buy Summary</h2>
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
             <table class="table table-striped">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <button class="btn btn-success" type="submit">Buy Now</button>
+                    <button class="btn btn-success" type="submit">Confirm Buy Now</button>
                     <a href="/single_order_cancel" class="btn btn-danger">Cancel</a>
                 </div>
             </form>

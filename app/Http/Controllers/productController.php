@@ -184,7 +184,7 @@ class productController extends Controller
         foreach ($single_order as $data) {
             $order = new order;
             $order->product_id=$data['product_id'];
-            $data->user_id=$data['user_id'];
+            $order->user_id=$data['user_id'];
             $order->address=$req->address;
             $order->status='pending';
             $order->payment_method=$req->payment;
